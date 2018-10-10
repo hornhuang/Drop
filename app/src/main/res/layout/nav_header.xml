@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="10dp"
+    android:background="#33FFFFFF">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/icon_image"
+        android:layout_width="106dp"
+        android:layout_height="100dp"
+        android:src="@drawable/fennudexiaoniao" />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text=" 814484626@qq.com"
+        android:textColor="#FFF"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mail"
+        android:text=" Mr.Huang"
+        android:textColor="#FFF"
+        android:textSize="20sp"/>
+
+</RelativeLayout>

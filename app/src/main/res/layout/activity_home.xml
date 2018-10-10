@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/world_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#3300cd00"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/world_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/world_top">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#9999CC"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="522dp"
+            android:layout_gravity="center">
+
+                <FrameLayout
+                    android:id="@+id/center_fragment"
+                    android:name="com.example.fragmentchange.CenterFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="514dp"
+                    android:layout_gravity="bottom">
+                </FrameLayout>
+
+        </FrameLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/world_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/world_top">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#CCCCCC"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:background="#ffffff">
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/selector_world"
+                android:background="#FFFFFF"
+                android:text="iworld"
+                android:textSize="7sp"
+                android:textColor="#ff888888"/>
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/selector_chat"
+                android:background="#FFFFFF"
+                android:text="ichat"
+                android:textSize="7sp"
+                android:textColor="#ff888888"/>
+
+            <Button
+                android:id="@+id/button_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/selector_book"
+                android:background="#FFFFFF"
+                android:text="ibook"
+                android:textSize="7sp"
+                android:textColor="#ff888888" />
+
+            <Button
+                android:id="@+id/button_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/selector_hoom"
+                android:background="#FFFFFF"
+                android:text="ihoom"
+                android:textSize="7sp"
+                android:textColor="#ff888888"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"
+        android:background="@drawable/chat_background"/>
+
+
+
+</android.support.v4.widget.DrawerLayout>

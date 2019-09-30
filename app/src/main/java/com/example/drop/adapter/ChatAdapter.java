@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.adapter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.drop.activities.ChatPageActivity;
+import com.example.drop.R;
+import com.example.drop.classes.Chat;
 
 import java.util.List;
 
@@ -40,7 +44,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         holder.homeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),ChatPageActivity.class);
+                Intent intent = new Intent(view.getContext(), ChatPageActivity.class);
                 view.getContext().startActivity(intent);
             }
         });

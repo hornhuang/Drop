@@ -1,9 +1,14 @@
-package com.example.drop;
+package com.example.drop.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import com.example.drop.R;
+import com.example.drop.utils.SpaceItemDecoration;
+import com.example.drop.adapter.PageAdapter;
+import com.example.drop.classes.Page;
 
 import java.util.ArrayList;
 import java.util.List;

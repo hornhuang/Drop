@@ -1,10 +1,10 @@
-package com.example.drop;
+package com.example.drop.utils;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-class SpaceItemDecoration extends RecyclerView.ItemDecoration {
+public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
     int mSpace;
 
     @Override

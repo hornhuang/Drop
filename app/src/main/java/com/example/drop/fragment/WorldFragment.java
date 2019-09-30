@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +16,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.drop.R;
+import com.example.drop.utils.SpaceItemDecoration;
+import com.example.drop.classes.World;
+import com.example.drop.classes.WorldAdapter;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;

@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.classes;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,13 @@ import android.view.View;
 import android.widget.Button;
 import android.support.v4.app.Fragment;
 import android.widget.Toast;
+
+import com.example.drop.fragment.BookFragment;
+import com.example.drop.fragment.ChatFragment;
+import com.example.drop.fragment.HomeFragment;
+import com.example.drop.activities.PlayAudioTest;
+import com.example.drop.R;
+import com.example.drop.fragment.WorldFragment;
 
 
 public class Home extends AppCompatActivity implements View.OnClickListener{
@@ -44,7 +51,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Intent intent = new Intent(Home.this,PlayAudioTest.class);
+                Intent intent = new Intent(Home.this, PlayAudioTest.class);
                 startActivity(intent);
                 return true;
             }

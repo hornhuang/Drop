@@ -1,21 +1,19 @@
-package com.example.drop;
+package com.example.drop.classes;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.print.PrinterId;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Filter;
 import android.widget.ImageView;
-import android.widget.Switch;
+
+import com.example.drop.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.adapter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.drop.R;
+import com.example.drop.classes.TakePhoto;
+import com.example.drop.classes.Chat;
 
 import java.util.List;
 
@@ -41,7 +44,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.homeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),TakePhoto.class);
+                Intent intent = new Intent(view.getContext(), TakePhoto.class);
                 view.getContext().startActivity(intent);
             }
         });

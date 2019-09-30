@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.classes;
 
 
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.drop.R;
+import com.example.drop.activities.Web;
 
 import java.util.List;
 
@@ -44,7 +47,7 @@ public class WorldAdapter extends RecyclerView.Adapter<WorldAdapter.ViewHolder> 
                 int position = holder.getAdapterPosition();
                 World world = mWorldList.get(position);
                 WorldAdapter tag = (WorldAdapter) view.getTag();
-                Intent intent  = new Intent(view.getContext(),Web.class);
+                Intent intent  = new Intent(view.getContext(), Web.class);
                 intent.putExtra("name", world.getName());
                 view.getContext().startActivity(intent);
             }

@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
@@ -23,16 +24,16 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".Home">
+        <activity android:name=".classes.Home">
 
         </activity>
-        <activity android:name=".Web" />
-        <activity android:name=".ChatPageActivity" />
-        <activity android:name=".HaiShuiYuTuJian" />
-        <activity android:name=".ReDaiYuTuJian" />
-        <activity android:name=".TakePhoto" />
-        <activity android:name=".PlayAudioTest" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".activities.Web" />
+        <activity android:name=".activities.ChatPageActivity" />
+        <activity android:name=".activities.HaiShuiYuTuJian" />
+        <activity android:name=".activities.ReDaiYuTuJian" />
+        <activity android:name=".classes.TakePhoto" />
+        <activity android:name=".activities.PlayAudioTest" />
+        <activity android:name=".activities.StartActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 

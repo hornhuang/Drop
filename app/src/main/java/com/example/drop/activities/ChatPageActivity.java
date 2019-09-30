@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,14 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.drop.R;
+import com.example.drop.adapter.MsgAdapter;
+import com.example.drop.classes.Msg;
+import com.example.drop.classes.Robot;
 import com.google.gson.Gson;
 
 
@@ -46,18 +48,15 @@ public class ChatPageActivity extends AppCompatActivity {
     private Robot robot;
 
     private int flag = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_page);
 
-        inputText = (EditText) findViewById(R.id.input_text);
-        send = (Button) findViewById(R.id.send);
-        msgRecyclerView = (RecyclerView) findViewById(R.id.msg_recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        msgRecyclerView.setLayoutManager(layoutManager);
-        adapter = new MsgAdapter(msgList);
-        msgRecyclerView.setAdapter(adapter);
+        iniViews();
+        iniRecycler();
+
         send.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -102,6 +101,17 @@ public class ChatPageActivity extends AppCompatActivity {
         });
     }
 
+    private void iniViews() {
+        inputText = findViewById(R.id.input_text);
+        send = findViewById(R.id.send);
+        msgRecyclerView = findViewById(R.id.msg_recycler_view);
+    }
 
+    private void iniRecycler() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        msgRecyclerView.setLayoutManager(layoutManager);
+        adapter = new MsgAdapter(msgList);
+        msgRecyclerView.setAdapter(adapter);
+    }
 
 }

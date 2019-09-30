@@ -1,10 +1,10 @@
-package com.example.drop;
+package com.example.drop.classes;
 
-public class Page {
+public class Book {
     private String name;
     private int imageId;
 
-    public Page(String name, int imageId){
+    public Book(String name, int imageId){
         this.name = name;
         this.imageId = imageId;
     }

@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +9,11 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.drop.R;
+import com.example.drop.utils.SpaceItemDecoration;
+import com.example.drop.adapter.BookAdapter;
+import com.example.drop.classes.Book;
 
 import java.util.ArrayList;
 import java.util.List;

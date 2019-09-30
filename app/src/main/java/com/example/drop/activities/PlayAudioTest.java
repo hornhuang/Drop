@@ -1,21 +1,12 @@
-package com.example.drop;
+package com.example.drop.activities;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import java.io.File;
-import java.io.IOException;
+import com.example.drop.R;
 
 public class PlayAudioTest extends AppCompatActivity  {
 
@@ -38,11 +29,14 @@ public class PlayAudioTest extends AppCompatActivity  {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 mediaPlayer.stop();
+
+
                 pause.setEnabled(false);
                 stop.setEnabled(false);
                 play.setEnabled(true);
             }
         });
+
         pause.setOnClickListener(new View.OnClickListener() {
 
 

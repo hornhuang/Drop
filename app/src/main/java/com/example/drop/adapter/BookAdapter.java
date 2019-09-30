@@ -1,4 +1,4 @@
-package com.example.drop;
+package com.example.drop.adapter;
 
 
 import android.content.Context;
@@ -12,6 +12,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.drop.activities.HaiShuiYuTuJian;
+import com.example.drop.R;
+import com.example.drop.activities.ReDaiYuTuJian;
+import com.example.drop.classes.Book;
+import com.example.drop.utils.BitmapBuilder;
 
 import java.util.List;
 
@@ -34,9 +40,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
         public ViewHolder(View view){
             super(view);
-            bookView = (CardView) view;
-            bookImage = (ImageView) view.findViewById(R.id.page_image);
-            bookName = (TextView) view.findViewById(R.id.page_name);
+            bookView  = (CardView) view;
+            bookImage = view.findViewById(R.id.page_image);
+            bookName  = view.findViewById(R.id.page_name);
         }
     }
 
@@ -68,7 +74,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Book book = mBookList.get(position);
-        holder.bookImage.setImageResource(book.getImageId());
+        holder.bookImage.setImageBitmap(BitmapBuilder.decodeBitmapById(mContext, book.getImageId(),100,100));
         holder.bookName.setText(book.getName());
 
     }
@@ -83,11 +89,11 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
         Intent intent;
         switch (book.getName()){
             case "海水鱼图鉴":
-                intent = new Intent(view.getContext(),HaiShuiYuTuJian.class);
+                intent = new Intent(view.getContext(), HaiShuiYuTuJian.class);
                 view.getContext().startActivity(intent);
                 break;
             case "热带鱼图鉴":
-                intent  = new Intent(view.getContext(),ReDaiYuTuJian.class);
+                intent  = new Intent(view.getContext(), ReDaiYuTuJian.class);
                 view.getContext().startActivity(intent);
                 break;
             case "珊瑚图鉴":

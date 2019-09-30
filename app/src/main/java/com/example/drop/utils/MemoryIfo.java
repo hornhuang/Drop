@@ -2,7 +2,7 @@ package com.example.drop.utils;
 
 import android.content.Context;
 
-public class MemoryIfo {
+public final class MemoryIfo {
 
     private static long maxMemory;
 

@@ -18,6 +18,7 @@ import com.example.drop.R;
 import com.example.drop.activities.ReDaiYuTuJian;
 import com.example.drop.classes.Book;
 import com.example.drop.utils.BitmapBuilder;
+import com.example.drop.utils.ScreamIfo;
 
 import java.util.List;
 
@@ -28,8 +29,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
     private List<Book> mBookList;
 
-    public BookAdapter(List<Book> bookList) {
-        mBookList = bookList;
+    public BookAdapter(List<Book> bookList, Context activityContext) {
+        this.mBookList = bookList;
+        this.mContext = activityContext;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -74,7 +76,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Book book = mBookList.get(position);
-        holder.bookImage.setImageBitmap(BitmapBuilder.decodeBitmapById(mContext, book.getImageId(),100,100));
+        holder.bookImage.setImageBitmap(BitmapBuilder.decodeBitmapById(mContext, book.getImageId(),
+                ScreamIfo.getSCREAMWIDTH()/3,ScreamIfo.getSCREAMHEIGHT()/3));
         holder.bookName.setText(book.getName());
 
     }

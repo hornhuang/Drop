@@ -34,11 +34,11 @@ public class BookFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         initBookBottom();
-        RecyclerView recyclerView_2 = (RecyclerView) getActivity().findViewById(R.id.recycler_bottom_view);
+        RecyclerView recyclerView_2 = getActivity().findViewById(R.id.recycler_bottom_view);
         StaggeredGridLayoutManager layoutManager_bottom = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         recyclerView_2.setLayoutManager(layoutManager_bottom);
         recyclerView_2.addItemDecoration(new SpaceItemDecoration(10));
-        BookAdapter adapter_bottom = new BookAdapter(bookList);
+        BookAdapter adapter_bottom = new BookAdapter(bookList, getContext());
         recyclerView_2.setAdapter(adapter_bottom);
     }
 

@@ -1,4 +1,4 @@
-package com.example.drop.classes;
+package com.example.drop.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,14 +21,15 @@ import android.widget.Toast;
 import com.example.drop.fragment.BookFragment;
 import com.example.drop.fragment.ChatFragment;
 import com.example.drop.fragment.HomeFragment;
-import com.example.drop.activities.PlayAudioTest;
 import com.example.drop.R;
 import com.example.drop.fragment.WorldFragment;
 
 
-public class Home extends AppCompatActivity implements View.OnClickListener{
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private DrawerLayout mDrawerLayout;
+
+    private NavigationView navView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +39,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         replaceFragment(new WorldFragment());
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout) ;
-        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout) ;
+        navView = findViewById(R.id.nav_view);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -51,23 +52,23 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Intent intent = new Intent(Home.this, PlayAudioTest.class);
+                Intent intent = new Intent(HomeActivity.this, PlayAudioTest.class);
                 startActivity(intent);
                 return true;
             }
         });
 
 
-        Button button1 = (Button) findViewById(R.id.button_1);
+        Button button1 = findViewById(R.id.button_1);
         button1.setOnClickListener(this);
 
-        Button button2 = (Button) findViewById(R.id.button_2);
+        Button button2 = findViewById(R.id.button_2);
         button2.setOnClickListener(this);
 
-        Button button3 = (Button) findViewById(R.id.button_3);
+        Button button3 = findViewById(R.id.button_3);
         button3.setOnClickListener(this);
 
-        Button button4 = (Button) findViewById(R.id.button_4);
+        Button button4 = findViewById(R.id.button_4);
         button4.setOnClickListener(this);
 
 

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Window;
 
 import com.example.drop.R;
-import com.example.drop.classes.Home;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(StartActivity.this, Home.class);
+                Intent intent = new Intent(StartActivity.this, HomeActivity.class);
                 startActivity(intent);
                 StartActivity.this.finish();   //关闭splashActivity，将其回收，否则按返回键会返回此界面
             }

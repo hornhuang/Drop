@@ -24,7 +24,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".classes.Home">
+        <activity android:name=".activities.HomeActivity">
 
         </activity>
         <activity android:name=".activities.Web" />

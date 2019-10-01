@@ -19,8 +19,6 @@ import java.util.List;
 
 public class ChatFragment extends Fragment {
 
-
-
     private List<Chat> chatList_1 = new ArrayList<>();
     private List<Chat> chatList_2 = new ArrayList<>();
     private List<Chat> chatList_3 = new ArrayList<>();
@@ -35,8 +33,6 @@ public class ChatFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
 
         initChat_1();
         RecyclerView recyclerView_1 = (RecyclerView) getActivity().findViewById(R.id.recycler_top_view_1);

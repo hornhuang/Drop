@@ -1,5 +1,6 @@
 package com.example.drop.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import com.example.drop.R;
 import com.example.drop.classes.TakePhoto;
 import com.example.drop.classes.Chat;
+import com.example.drop.utils.BitmapBuilder;
+import com.example.drop.utils.ScreamIfo;
 
 import java.util.List;
 
@@ -19,8 +22,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private List<Chat> mHomeList;
 
-    public HomeAdapter(List<Chat> chatList) {
-        mHomeList = chatList;
+    private Context mContext;
+
+    public HomeAdapter( Context mContext, List<Chat> chatList ) {
+        this.mHomeList = chatList;
+        this.mContext = mContext;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -31,8 +37,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         public ViewHolder(View view){
             super(view);
             homeView = view;
-            homeImage = (ImageView) view.findViewById(R.id.home_image);
-            homeName = (TextView) view.findViewById(R.id.home_name);
+            homeImage = view.findViewById(R.id.home_image);
+            homeName  = view.findViewById(R.id.home_name);
         }
     }
 
@@ -51,7 +57,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.homeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),TakePhoto.class);
+                Intent intent = new Intent(view.getContext(), TakePhoto.class);
                 view.getContext().startActivity(intent);
             }
         });
@@ -62,7 +68,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, int position) {
         Chat home = mHomeList.get(position);
-        holder.homeImage.setImageResource(home.getImageId());
+        holder.homeImage.setImageBitmap(BitmapBuilder.decodeBitmapById(mContext.getResources(),
+                home.getImageId(), ScreamIfo.getSCREAMWIDTH() / 2, ScreamIfo.getSCREAMHEIGHT() / 4));
         holder.homeName.setText(home.getName());
     }
 

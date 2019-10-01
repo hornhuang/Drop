@@ -1,16 +1,16 @@
 package com.example.drop.utils;
 
-import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 
 public class BitmapBuilder {
 
-    public static BitmapFactory.Options calculateOptionsById(int imgId, @NonNull Context activityContext) {
+    public static BitmapFactory.Options calculateOptionsById(@NonNull Resources res, int imgId) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(activityContext.getResources(), imgId, options);
+        BitmapFactory.decodeResource(res, imgId, options);
         options.inJustDecodeBounds = false;
         return options;
     }
@@ -27,10 +27,10 @@ public class BitmapBuilder {
         return inSamplesize;
     }
 
-    public static Bitmap decodeBitmapById (@NonNull Context activityContext, int resId,  int reqWidth, int reqHeight) {
-        BitmapFactory.Options options = calculateOptionsById(resId, activityContext);
+    public static Bitmap decodeBitmapById (@NonNull Resources res, int resId, int reqWidth, int reqHeight) {
+        BitmapFactory.Options options = calculateOptionsById(res, resId);
         options.inSampleSize = calculateInSamplesizeByOptions(options, reqWidth, reqHeight);
-        Bitmap bitmap = BitmapFactory.decodeResource(activityContext.getResources(), resId, options);
+        Bitmap bitmap = BitmapFactory.decodeResource(res, resId, options);
         return bitmap;
     }
 

@@ -22,11 +22,6 @@
 
     </LinearLayout>
 
-
-
-
-
-
     <LinearLayout
         android:id="@+id/world_center_text"
         android:layout_width="match_parent"
@@ -44,8 +39,7 @@
             android:layout_height="wrap_content"
             android:text="欢迎来到水族天堂"
             android:textSize="20sp"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="match_parent"
@@ -53,7 +47,6 @@
             android:background="#CCCCCC"/>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/world_bottom"

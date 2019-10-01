@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#8CFFFFFF"
-        >
+        android:background="#8CFFFFFF">
 
         <TextView
             android:layout_width="match_parent"
@@ -23,9 +22,7 @@
             android:layout_height="35dp"
             android:text="我的机器人"
             android:textSize="20sp"
-            android:layout_gravity="left"
-            />
-
+            android:layout_gravity="left" />
 
     </LinearLayout>
 
@@ -61,12 +58,9 @@
             android:layout_height="35dp"
             android:text="我的好友"
             android:textSize="20sp"
-            android:layout_gravity="left"
-            />
+            android:layout_gravity="left" />
 
     </LinearLayout>
-
-
 
     <LinearLayout
         android:id="@+id/world_top_2"
@@ -81,7 +75,6 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/world_center_text_2"
@@ -100,8 +93,7 @@
             android:layout_height="35dp"
             android:text="我的黑名单"
             android:textSize="20sp"
-            android:layout_gravity="left"
-            />
+            android:layout_gravity="left" />
 
     </LinearLayout>
 
@@ -117,7 +109,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
-
 
 </RelativeLayout>

@@ -33,10 +33,10 @@ public class HomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         initHome_1();
-        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.home_list_view);
+        RecyclerView recyclerView = getActivity().findViewById(R.id.home_list_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        HomeAdapter adapter = new HomeAdapter(homeList);
+        HomeAdapter adapter = new HomeAdapter(getActivity(), homeList);
         recyclerView.setAdapter(adapter);
 
 

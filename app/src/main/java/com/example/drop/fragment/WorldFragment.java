@@ -60,24 +60,22 @@ public class WorldFragment extends Fragment implements ViewPager.OnPageChangeLis
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        mRollViewPager = (RollPagerView) getActivity().findViewById(R.id.roll_view_pager);
+        mRollViewPager = (RollPagerView) view.findViewById(R.id.roll_view_pager);
         mRollViewPager.setPlayDelay(2000);
         mRollViewPager.setAnimationDurtion(500);
         mRollViewPager.setAdapter(new TestNormalAdapter());
         mRollViewPager.setHintView(new ColorPointHintView(getActivity(), Color.YELLOW,Color.WHITE));
 
-
         initWorldBottom();
-        RecyclerView recyclerView_2 = (RecyclerView) getActivity().findViewById(R.id.recycler_bottom_view);
+        RecyclerView recyclerView_2 = (RecyclerView) view.findViewById(R.id.recycler_bottom_view);
         StaggeredGridLayoutManager layoutManager_bottom = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         recyclerView_2.setLayoutManager(layoutManager_bottom);
         recyclerView_2.addItemDecoration(new SpaceItemDecoration(10));
         WorldAdapter adapter_bottom = new WorldAdapter(worldList);
         recyclerView_2.setAdapter(adapter_bottom);
-
     }
 
     private void initWorldBottom() {

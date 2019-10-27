@@ -23,6 +23,7 @@ public class BitmapBuilder {
         }
         options.inJustDecodeBounds = false;
         return inSamplesize;
+        BitmapFactory.decodeStream()
     }
 
     public static Bitmap decodeBitmapById (@NonNull Resources res, int resId, int reqWidth, int reqHeight) {

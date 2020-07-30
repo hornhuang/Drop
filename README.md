@@ -1,5 +1,4 @@
 # Drop
-<<<<<<< HEAD
-FirstAndroidProject
-=======
->>>>>>> Initial commit
+- my First Android Project
+
+## 界面
